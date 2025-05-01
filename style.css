@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: rgb(168, 167, 167);
+    font-family: 'Fira Sans', sans-serif;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in;
+    z-index: 100;
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+.sidebar nav {
+    padding: 45px 25px;
+}
+
+.sidebar nav li {
+    list-style: none;
+    font-size: 18px;
+    padding: 15px 0;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.2s;
+    display: block; /* Makes entire area clickable */
+}
+
+.sidebar li a:hover {
+    color: dodgerblue;
+}
+
+/* This class will only be applied when the sidebar should be hidden */
+.sidebarGo {
+    transform: translateX(-100%);
+}
+
+/* Main content styles */
+.main {
+    width: 100%;
+    padding-left: 250px; /* Use padding instead of margin for better responsiveness */
+    transition: padding-left 0.3s ease-in;
+}
+
+.main-full {
+    padding-left: 0;
+}
+
+/* Info container styles */
+.infocontainer {
+    max-width: 1200px;
+    height: auto;
+    min-height: 68vh;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Developer picture styles */
+.devpic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.devpic img {
+    height: auto;
+    max-height: 58vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Developer info styles */
+.devinfo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.hello {
+    font-size: 2.5em;
+}
+
+.name {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.about {
+    font-size: 2em;
+}
+
+.more-about {
+    font-size: 1.5em;
+    margin-top: 22px;
+}
+
+.intro {
+    margin: 10px 0;
+}
+
+/* Button styles */
+.buttons {
+    margin-top: 2em;
+}
+
+.buttons button, .btn {
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: white;
+    background-color: dodgerblue;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.buttons button:hover, .btn:hover {
+    background-color: wheat;
+    color: dodgerblue;
+    border: 2px solid dodgerblue;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 12px 0;
+}
+
+/* Contact form styles */
+.contactform {
+    font-family: 'Fira Sans', sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contactform h1 {
+    font-family: 'Source Code Pro', monospace;
+    margin-bottom: 20px;
+}
+
+.contactform form div {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactform form div input, 
+.contactform form div textarea {
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#emailHelp {
+    font-size: 11px;
+    color: midnightblue;
+    margin: 0 5px;
+    padding: 3px 0 0 0;
+}
+
+#form-check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#form-check input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Blog styles */
+.blogcontainer {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.blogitem {
+    margin: 20px 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+.intro h2 {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 12px 0;
+}
+
+.intro p {
+    font-family: 'Source Code Pro', monospace;
+    margin: 12px 0;
+}
+
+/* Skills styles */
+.skillcontainer {
+    padding: 12px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skillitem {
+    display: flex;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.skillitem p {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.skill {
+    width: 100%;
+    max-width: 265px;
+    height: 6px;
+    background-color: #eee;
+    border: 2px solid black;
+    flex-grow: 1;
+    position: relative;
+}
+
+.hundred {
+    width: 100%;
+    background-color: yellow;
+    height: 100%;
+    position: absolute;
+}
+
+.eighty-5 {
+    width: 85%;
+    background-color: green;
+    height: 100%;
+    position: absolute;
+}
+
+.fifty {
+    width: 50%;
+    background-color: aqua;
+    height: 100%;
+    position: absolute;
+}
+
+.twenty-5 {
+    width: 25%;
+    background-color: dodgerblue;
+    height: 100%;
+    position: absolute;
+}
+
+/* Project styles */
+.project {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.project h3 {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 12px 0;
+}
+
+.project ol li {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 15px 0;
+    margin-left: 20px;
+}
+
+hr {
+    border: 1px dashed black;
+    margin: 30px 0;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    position: fixed;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 101;
+    display: none; /* Hidden by default on larger screens */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow for better visibility */
+}
+
+.cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px;
+    z-index: 102;
+}
+
+/* General utility class */
+.my {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .infocontainer {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .devinfo {
+        align-items: center;
+    }
+    
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main {
+        padding-left: 200px;
+    }
+    
+    .hello, .name {
+        font-size: 2em;
+    }
+    
+    .about {
+        font-size: 1.5em;
+    }
+    
+    .more-about {
+        font-size: 1.2em;
+    }
+}
+
+/* Mobile sidebar transition */
+@media (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .sidebar {
+        /* By default, sidebar is hidden on mobile */
+        transform: translateX(-100%);
+        width: 250px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    }
+    
+    /* Class to show sidebar when hamburger is clicked */
+    .sidebarVisible {
+        transform: translateX(0);
+    }
+    
+    /* When sidebar is hidden or in mobile view, no padding needed */
+    .main {
+        padding-left: 0;
+    }
+    
+    .hello, .name {
+        font-size: 1.8em;
+    }
+    
+    .about {
+        font-size: 1.3em;
+    }
+    
+    .buttons button, .btn {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    
+    /* Add padding to prevent content from being behind hamburger */
+    body {
+        padding-top: 10px;
+    }
+    
+    /* Improve tap targets for mobile */
+    .sidebar nav li {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .hello, .name {
+        font-size: 1.5em;
+    }
+    
+    .about {
+        font-size: 1.1em;
+    }
+    
+    .more-about {
+        font-size: 1em;
+    }
+    
+    .skillitem p {
+        width: 100px;
+    }
+    
+    /* Make sure all content fits nicely on small screens */
+    .contactform, .blogcontainer, .project, .my {
+        padding: 0 15px;
+    }
+}
